@@ -3,10 +3,12 @@ import {
   BookAudioIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
+  HomeIcon,
   Power,
   ToggleRightIcon,
 } from "lucide-react";
-import { easeIn, easeInOut, easeOut, motion, spring } from "motion/react";
+import { easeInOut, motion } from "motion/react";
+import { NavLink } from "react-router-dom";
 // import { del } from "motion/react-client";
 
 const Sidebar = () => {
@@ -18,6 +20,11 @@ const Sidebar = () => {
 
   const links = [
     {
+      name: "Home",
+      href: "/home",
+      icon: <HomeIcon />,
+    },
+    {
       name: "Button",
       href: "/button",
       icon: <Power />,
@@ -28,28 +35,28 @@ const Sidebar = () => {
       icon: <ToggleRightIcon />,
     },
     {
-      name: "Card-A",
-      href: "/card-A",
+      name: "Card",
+      href: "/card",
       icon: <BookAudioIcon />,
     },
     {
-      name: "b",
-      href: "/b",
+      name: "Animated-Text",
+      href: "/animatedText",
       icon: <BookAudioIcon />,
     },
     {
-      name: "c",
-      href: "/c",
+      name: "Beam-Animation",
+      href: "/beam-animation",
       icon: <BookAudioIcon />,
     },
     {
-      name: "d",
-      href: "/d",
+      name: "SequenceAnimate",
+      href: "sequenceAnimate",
       icon: <BookAudioIcon />,
     },
     {
-      name: "e",
-      href: "/e",
+      name: "Layout-Card",
+      href: "/layoutcard",
       icon: <BookAudioIcon />,
     },
     {
@@ -68,8 +75,8 @@ const Sidebar = () => {
       icon: <BookAudioIcon />,
     },
     {
-      name: "i",
-      href: "/i",
+      name: "Form-Page",
+      href: "/form",
       icon: <BookAudioIcon />,
     },
   ];
@@ -144,14 +151,20 @@ const Sidebar = () => {
             <motion.ul variants={parentvarient} className="space-y-2 text-sm">
               {links.map((link) => (
                 <motion.li variants={childVarients} key={link.name} >
-                  <a
-                    href={link.href}
-                    className="flex items-center p-2 pr-5 text-gray-700 rounded hover:text-gray-200"
+                  <NavLink
+                    to={link.href}
+                    className={({ isActive }) =>
+                      `flex items-center p-2 pr-5 rounded ${
+                        isActive
+                          ? "bg-gray-100 text-gray-900"
+                          : "text-gray-700 hover:text-gray-200"
+                      }`
+                    }
                     title={!isOpen ? link.name : ""}
                   >
-                    {link.icon }
+                    {link.icon}
                     {isOpen && link.name}
-                  </a>
+                  </NavLink>
                 </motion.li>
               ))}
             </motion.ul>
