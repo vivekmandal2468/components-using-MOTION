@@ -1,12 +1,38 @@
 import { MoonIcon, SunIcon } from "lucide-react";
 import { useTheme } from "next-themes";
+import { flushSync } from "react-dom";
 
 export default function ModeToggle() {
-    const { resolvedTheme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
 
-    const switchTheme = () => {
-        setTheme(resolvedTheme === "dark" ? "light" : "dark");
-    };
+  const switchTheme = () => {
+    const nextTheme = resolvedTheme === "dark" ? "light" : "dark";
+
+    // Fallback for browsers that don't support View Transitions
+    if (!document.startViewTransition) {
+      setTheme(nextTheme);
+      return;
+    }
+
+    const transition = document.startViewTransition(() => {
+      flushSync(() => {
+        setTheme(nextTheme);
+      });
+    });
+
+    transition.ready.then(() => {
+      document.documentElement.animate(
+        {
+          clipPath: ["inset(0 0 100% 0)", "inset(0)"],
+        },
+        {
+          duration: 600,
+          easing: "ease-in-out",
+          pseudoElement: "::view-transition-new(root)",
+        }
+      );
+    });
+  };
 
   return (
     <button

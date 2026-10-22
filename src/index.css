@@ -8,6 +8,12 @@
   --foreground: oklch(0.145 0 0);
 }
 
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
 /* System preference fallback when .dark isn't manually controlled */
 /* @media (prefers-color-scheme: dark) {
   :root:not(.light) {

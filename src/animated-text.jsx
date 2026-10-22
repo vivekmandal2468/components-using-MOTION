@@ -8,7 +8,7 @@ const AnimatedText = () => {
   const [scope, animate] = useAnimate();
 
   const text =
-    "हम ने उस को इतना देखा... जितना देखा जा सकता था, लेकिन फिर भी दो आँखों से कितना देखा जा सकता था !";
+    "“You've gotta dance like there's nobody watching..., Love like you'll never be hurt, Sing like there's nobody listening, And live like it's heaven on earth.”";
 
   const startAnimating = async () => {
     // 1. Instant rewind (0 sec) - Har click par pehle sab starting position pe jayenge
@@ -34,9 +34,13 @@ const AnimatedText = () => {
       {/* Trigger Button */}
       <button
         onClick={startAnimating}
-        className="bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 px-5 py-2.5 rounded-lg text-sm font-semibold tracking-wide cursor-pointer active:scale-95 transition-transform"
+        className={cn("bg-neutral-900 text-white dark:bg-white  px-5 py-2.5 rounded-lg text-sm font-semibold tracking-wide cursor-pointer active:scale-95 transition-transform",
+          "bg-gradient-to-b from-neutral-800 to-neutral-900 border border-neutral-700/60 text-neutral-100",
+          "shadow-[0_1px_2px_rgba(0,0,0,0.4),0_8px_24px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.1)]",
+          "hover:border-neutral-600 hover:from-neutral-800 hover:to-neutral-850 active:scale-[0.98] transition-colors"
+        )}
       >
-        Shayari
+        quotes
       </button>
 
       {/* Words Container */}

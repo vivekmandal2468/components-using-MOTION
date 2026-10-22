@@ -1,9 +1,10 @@
 import { motion } from "motion/react";
 import React from "react";
+import { cn } from "./lib/utils";
 
 export default function GlowButton() {
   return (
-    <motion.div className=" border border-neutral-300 bg-white  shadow-inner shadow-neutral-200 rounded-full h-72 w-72 flex items-center justify-center">
+    <motion.div className="  min-w-4xl  bg-neutral-950/60  shadow-inner shadow-neutral-200 rounded-3xl h-48  flex items-center justify-center">
       <motion.button
         whileHover={{
           rotateX: 25,
@@ -18,7 +19,10 @@ export default function GlowButton() {
           duration: 0.3,
           ease: "easeInOut",
         }}
-        className="group relative text-neutral-500 px-12 py-4 rounded-lg bg-black shadow-[0px_1px_2px_0px_rgba(255,255,255,0.1)_inset,0px,-1px_2px_0px_rgba(255,255,255,0.1)_inset]"
+        className={cn("group relative text-neutral-500 px-12 py-4 rounded-lg ",
+          "bg-gradient-to-b from-neutral-800 to-neutral-900 border border-neutral-700/60 text-neutral-100",
+          "shadow-[0_1px_2px_rgba(0,0,0,0.4),0_8px_24px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.1)]",
+          "hover:border-neutral-600 hover:from-neutral-800 hover:to-neutral-850 active:scale-[0.98] transition-colors", "")}
       >
         <span className="group-hover:text-cyan-500 transition-colors duration-300">
           CLICK ME

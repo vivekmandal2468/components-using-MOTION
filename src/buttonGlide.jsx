@@ -14,10 +14,10 @@ const ButtonGlide = () => {
   const [hovered, setHovered] = useState(null);
 
   return (
-    <div className="py-20 flex justify-center">
+    <div className="py-20 flex justify-center bg-neutral-950/60  shadow-inner shadow-neutral-200 rounded-3xl h-48  min-w-4xl items-center">
       <nav
         onMouseLeave={() => setHovered(null)}
-        className="flex items-center gap-1 rounded-full bg-neutral-100 p-1.5 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800"
+        className="flex items-center gap-1 rounded-full bg-neutral-100 p-1.5 dark:bg-neutral-900 border border-black/50  shadow-inner  shadow-neutral-400 dark:border-neutral-800 "
       >
         {buttonItems.map((item, idx) => (
           <Link

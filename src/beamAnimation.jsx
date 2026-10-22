@@ -3,7 +3,7 @@ import React from "react";
 
 export const SvgAnimation = () => {
   return (
-    <div className="bada pt-18">
+    <div className="bada pt-18 bg-neutral-950/60 items-center justify-center flex rounded-3xl shadow-inner shadow-neutral-200 py-8 pb-20 dark:bg-neutral-500/60">
       <motion.div
         whileHover="animate"
         className="relative flex items-center justify-between w-full max-w-sm mx-auto group px-15 py-10 rounded-xl gap-78 border border-neutral-800 shadow-2xs bg-black min-w-lg shadow-inner shadow-neutral-200/70"

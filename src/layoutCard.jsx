@@ -44,12 +44,12 @@ const useOutsideClick = (callback) => {
 
 const LayoutCard = () => {
 
-  const ref = useOutsideClick(()=>setCurrent(null));
+  const ref = useOutsideClick(()=> setCurrent(null));
 
     const [current, setCurrent] = useState(null);
 
   return (
-    <div className={cn(" items-center justify-center h-dvh pt-5 relative bg-neutral-950/60 rounded-3xl ",
+    <div className={cn(" items-center justify-center h-full lg:p-5  relative bg-neutral-950/60 rounded-3xl ",
              "")}>
 
       {current && <motion.div 
@@ -110,7 +110,7 @@ const LayoutCard = () => {
                 <motion.p layoutId={`p-${card.description}`} className="text-xs  text-[10px] text-neutral-500">{card.description}</motion.p>
               </div>
             </div>
-              <div className={cn("px-3 py-1 rounded-full text-white text-xs ","bg-gradient-to-b from-neutral-800 to-neutral-900 border border-neutral-700/60 text-neutral-100",
+              <div className={cn("px-3 py-1 rounded-full text-white md:text-xs text-[10px] ","bg-gradient-to-b from-neutral-800 to-neutral-900 border border-neutral-700/60 text-neutral-100",
           "shadow-[0_1px_1.5px_rgba(0,0,0,0.4),0_8px_24px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.1)]/70",
           "hover:border-neutral-600 hover:from-neutral-800 hover:to-neutral-850 active:scale-[0.98] transition-colors")}>
                 {card.ctaText}
