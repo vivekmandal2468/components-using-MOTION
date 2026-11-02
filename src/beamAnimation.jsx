@@ -31,7 +31,7 @@ export const SvgAnimation = () => {
             <BottomSVG className="absolute bottom-2 w-full pl-3 md:pl-0 lg:pl-0" />
           </div>
         </div>
-        <div className="relative right-13 z-10 flex size-12 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-neutral-800 p-px shadow-lg">
+        <div className="relative right-16 md:right-13 lg:right-13  z-10 flex size-12 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-neutral-800 p-px shadow-lg">
           <div className="absolute inset-0 h-full w-full scale-[1.6] animate-spin [background-image:conic-gradient(at_center,transparent,rgba(59,130,246,0.9)_20%,transparent_30%)] [animation-duration:3s]" />
           <div className="absolute inset-0 h-full w-full scale-[1.6] animate-spin [background-image:conic-gradient(at_center,transparent,rgba(239,68,68,0.9)_20%,transparent_30%)] [animation-delay:1.5s] [animation-duration:3s]" />
 

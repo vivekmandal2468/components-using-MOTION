@@ -52,7 +52,7 @@ const Header = ({ isSidebarOpen, setIsSidebarOpen }) => {
             )}
           >
             {/* <img src="/deadpoolPic.jpg" alt="img" className="relative rounded-full " /> */}
-            <img src="/myPic.jpg" alt="img" className="h-10 w-10 cursor-pointer rounded-full shadow-2xl" />
+            <img src="/myPic.jpg" alt="img" fetchPriority="high" className="h-10 w-10 cursor-pointer rounded-full shadow-2xl" />
           </button>
           {/* <div className="w-10 h-10 rounded-full bg-gray-300"></div> */}
         </div>
@@ -68,7 +68,11 @@ const Header = ({ isSidebarOpen, setIsSidebarOpen }) => {
           className="fixed inset-0 z-90 flex cursor-pointer items-center justify-center bg-black/50 p-4 backdrop-blur-sm"
         >
           <div onClick={(e) => e.stopPropagation()} className="w-96">
-            <img src="/xProfile.png" alt="Profile" className="max-h-[80vh] max-w-[90vw] rounded-3xl object-contain mb-32 lg:mb-0" />
+            <a 
+              href = 'https://x.com/PrimeDev_2468'
+              target="_blank"
+              rel="noopener noreferrer">
+            <img src="/xProfile.png" alt="Profile" fetchPriority="high" className="max-h-[80vh] max-w-[90vw] rounded-3xl object-contain mb-32 lg:mb-0" /></a>
           </div>
         </motion.div>
       )}
