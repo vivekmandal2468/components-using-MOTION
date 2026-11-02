@@ -4,7 +4,7 @@ import { cn } from "./lib/utils";
 
 export default function GlowButton() {
   return (
-    <motion.div className="  min-w-4xl  bg-neutral-950/60  shadow-inner shadow-neutral-200 rounded-3xl h-48  flex items-center justify-center">
+    <motion.div className="bg-neutral-950/60  shadow-inner dark:shadow-neutral-700 shadow-neutral-200 rounded-3xl h-48  flex items-center justify-center">
       <motion.button
         whileHover={{
           rotateX: 25,

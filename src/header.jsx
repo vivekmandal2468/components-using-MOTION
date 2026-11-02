@@ -3,15 +3,23 @@ import ModeToggle from "./mode-toggle";
 import { HomeIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 import { cn } from "./lib/utils";
-import {  motion } from "motion/react";
+import { motion } from "motion/react";
+import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 
-const Header = () => {
+const Header = ({ isSidebarOpen, setIsSidebarOpen }) => {
   const [iSopen, setIsOpen] = useState(false);
 
   return (
     <header className="bg-white shadow-sm dark:bg-neutral-800">
       <div className="flex items-center justify-between px-6 py-4">
-        <h2 className="font-manrope text-xl font-semibold text-neutral-700 dark:text-white">PRIME.dev</h2>
+        <button
+          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+          className="rounded-full  p-2 dark:text-neutral-200 text-neutral-600 border-neutral-200 dark:border-neutral-700 border shadow-md md:hidden "
+          aria-label="Toggle sidebar"
+        >
+          {isSidebarOpen ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+        </button>
+        <h2 className="font-manrope text-xl font-semibold text-neutral-700 dark:text-white items-center justify-center pt-2">PRIME.dev</h2>
         <div className="flex items-center space-x-4">
           <Link
             to="/"
@@ -60,7 +68,7 @@ const Header = () => {
           className="fixed inset-0 z-90 flex cursor-pointer items-center justify-center bg-black/50 p-4 backdrop-blur-sm"
         >
           <div onClick={(e) => e.stopPropagation()} className="w-96">
-            <img src="/xProfile.png" alt="Profile" className="max-h-[80vh] max-w-[90vw] rounded-3xl object-contain" />
+            <img src="/xProfile.png" alt="Profile" className="max-h-[80vh] max-w-[90vw] rounded-3xl object-contain mb-32 lg:mb-0" />
           </div>
         </motion.div>
       )}

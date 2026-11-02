@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Sidebar from "./sidebar";
 
 import { Link, Routes, Route } from "react-router-dom";
@@ -16,17 +16,34 @@ import { Faq } from "./faq";
 import { cn } from "./lib/utils";
 import Header from "./header";
 
-
-
 const Dashboard = () => {
   const scrollContainerRef = useRef(null);
 
+  //  Desktop width >= 768px → sidebar starts open
+  // Mobile width < 768px  → sidebar starts closed
+  const [isSidebarOpen, setIsSidebarOpen] = useState(window.innerWidth >= 768);
+
   return (
     <div className="relative flex h-screen bg-gray-100 text-gray-900 dark:bg-neutral-900 dark:text-white">
-      <Sidebar />
-      <div ref={scrollContainerRef} className="relative z-10 min-w-0 flex-1 overflow-auto">
-      <Header/>
+      <Sidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
 
+      {isSidebarOpen && (
+        <div
+          onClick={() => {
+            if (window.innerWidth < 768) {
+              setIsSidebarOpen(false);
+            }
+          }}
+          className="fixed inset-0 z-20 bg-black/30 md:hidden"
+        />
+      )}
+      
+      <div
+        ref={scrollContainerRef}
+        className={`relative z-10 min-w-0 flex-1 overflow-auto transition-[margin] duration-300 `}
+      >
+        {/* Header and Sidebar are separate components. The sidebar state belongs to Dashboard, so the header needs to receive the state and the setter in order to control the sidebar. */}
+        <Header isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
         {/* Dynamic content renders here based on Sidebar NavLinks */}
         <div className="idhar items-center justify-center p-8">
           <Routes>

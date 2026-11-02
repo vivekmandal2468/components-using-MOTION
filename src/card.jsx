@@ -9,7 +9,7 @@ const Card = () => {
     const [open, setOpen] = useState(true);
 
   return (
-    <div className="items-center justify-center bg-neutral-950/60 flex rounded-3xl shadow-inner shadow-neutral-200 dark:shadow-neutral-900">
+    <div className="items-center justify-center dark:shadow-neutral-700 bg-neutral-950/60 flex rounded-3xl shadow-inner shadow-neutral-200 ">
     <>
         <AnimatePresence>
     {open && (

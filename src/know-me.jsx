@@ -8,7 +8,7 @@ export const FormPage = () => {
       className={cn(
         "min-h-[calc(100vh-50vh)]  w-full px-8 py-1 flex flex-col items-center justify-center transition-colors duration-200",
         "bg-gray-100 dark:bg-neutral-950",
-        "selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black"
+        "selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black rounded-3xl dark:shadow-neutral-700 shadow-inner shadow-neutral-200"
       )}
     >
       <div className="w-full max-w-4xl mx-auto">

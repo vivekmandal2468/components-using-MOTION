@@ -190,7 +190,7 @@ const SequenceAnimate = () => {
   return (
     <div
       ref={scope}
-      className="relative flex items-center justify-center p-8 bg-neutral-950/60 rounded-3xl"
+      className="relative flex items-center justify-center p-8 bg-neutral-950/60 rounded-3xl dark:shadow-neutral-700 shadow-inner"
     >
       <motion.button
         onClick={startAnimating}

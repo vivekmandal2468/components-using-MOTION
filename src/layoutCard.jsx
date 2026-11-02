@@ -44,18 +44,18 @@ const useOutsideClick = (callback) => {
 
 const LayoutCard = () => {
 
+  const [current, setCurrent] = useState(null);
   const ref = useOutsideClick(()=> setCurrent(null));
 
-    const [current, setCurrent] = useState(null);
 
   return (
-    <div className={cn(" items-center justify-center h-full lg:p-5  relative bg-neutral-950/60 rounded-3xl ",
+    <div className={cn("relative h-full items-center justify-center rounded-3xl bg-neutral-950/60 px-3 py-4 shadow-inner shadow-neutral-200 sm:px-4 lg:p-5 dark:shadow-neutral-700",
              "")}>
 
       {current && <motion.div 
         initial={{opacity: 0,}}
         animate={{opacity: 1}}
-      className={cn("fixed z-10 h-dvh w-full inset-0 bg-black/50 backdrop-blur-sm cursor-pointer",
+      className={cn("fixed z-10 h-dvh w-full inset-0 bg-black/50 backdrop-blur-sm cursor-pointer ",
               "")}>
         
         </motion.div>}
@@ -63,14 +63,16 @@ const LayoutCard = () => {
       {current && (
         <motion.div
         layoutId={`card-${current.title}`}
-        ref={ref} className="h-[520px] w-80 rounded-2xl border border-neutral-200 p-4 fixed inset-0 z-20 m-auto bg-white overflow-hidden">
+        ref={ref}
+         className="fixed inset-0 z-20 m-auto h-fit w-[calc(100%-2rem)] max-w-sm -translate-y-4 overflow-hidden rounded-2xl border border-neutral-200 bg-white p-4 sm:w-80 sm:translate-y-0">
+          
           <motion.img  layoutId={`card-image-${current.title}`} src={current.src} alt="img" className=" aspect-square rounded-xl" />
-          <div className="flex justify-between items-start py-4">
-            <div className="flex flex-col items-start gap-2">
+          <div className="flex items-start justify-between gap-3 py-4">
+            <div className="flex flex-col items-start gap-2 min-w-0">
                <motion.h2 
                layoutId={`h2-${current.title}`} 
-               className="font-bold text-lg text-black tracking-tight">{current.title}</motion.h2>
-                <motion.p  layoutId={`p-${current.description}`}className="text-xs  text-[20px] text-neutral-500">{current.description}</motion.p>
+               className="text-left font-bold text-lg text-black tracking-tight items-start">{current.title}</motion.h2>
+                <motion.p  layoutId={`p-${current.description}`}className="text-left text-xs  text-[20px] text-neutral-500">{current.description}</motion.p>
             </div>
              <Link to={current.ctaLink} className={cn("flex items-center justify-center px-3 py-2 gap-1 rounded-full text-white text-xs ","bg-gradient-to-b from-neutral-800 to-neutral-900 border border-neutral-700/60 text-neutral-100",
           "shadow-[0_1px_1.5px_rgba(0,0,0,0.4),0_8px_24px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.1)]/70",
@@ -83,36 +85,36 @@ const LayoutCard = () => {
             initial={{filter: 'blur(10px)', opacity: 0}}
             animate={{filter: 'blur(0px)', opacity: 1}}
             transition={{duration: 0.7}}
-            className="h-40 overflow-auto text-black">
+            className=" text-black">
             {current.content()}
           </motion.div>
         </motion.div> )}
 
 
 
-      <div className="max-w-md mx-auto flex flex-col gap-10 ">
+      <div className="mx-auto flex w-full max-w-md flex-col gap-6 sm:gap-10 ">
         {cards.map((card, idx) => (
           <motion.button
             layoutId = {`card-${card.title}`}
             onClick={()=> setCurrent(card)}
             key={card.title}
-            className="p-4 rounded-lg flex justify-between items-center bg-white border border-neutral-200 cursor-pointer h-20 relative"
+            className="relative flex min-h-16 h-auto w-full cursor-pointer items-stretch justify-between gap-3 rounded-lg border border-neutral-200 bg-white p-3 sm:items-center sm:p-4"
           >
-            <div className="flex gap-4 items-center  ">
+            <div className="flex min-w-0 self-stretch items-start gap-3 sm:items-center sm:gap-4 sm:self-auto">
               <motion.img
               layoutId={`card-image-${card.title}`}
                 src={card.src}
                 alt='img'
-                className="aspect-square h-15 rounded-lg bg-black "
+                className="h-full w-15 self-stretch rounded-lg bg-black object-cover sm:aspect-square sm:h-15 sm:w-auto sm:self-center "
               />
-              <div className="flex flex-col gap-2 items-start">
-                <motion.h2 layoutId={`h2-${card.title}`} className="font-bold text-lg text-black tracking-tight">{card.title}</motion.h2>
-                <motion.p layoutId={`p-${card.description}`} className="text-xs  text-[10px] text-neutral-500">{card.description}</motion.p>
+              <div className="flex flex-col gap-1 items-start min-w-0">
+                <motion.h2 layoutId={`h2-${card.title}`} className="text-left font-bold text-lg text-black tracking-tight">{card.title}</motion.h2>
+                <motion.p layoutId={`p-${card.description}`} className="text-left text-xs  text-[10px] text-neutral-500">{card.description}</motion.p>
               </div>
             </div>
-              <div className={cn("px-3 py-1 rounded-full text-white md:text-xs text-[10px] ","bg-gradient-to-b from-neutral-800 to-neutral-900 border border-neutral-700/60 text-neutral-100",
+              <div className={cn("shrink-0 self-center rounded-full px-3 py-1 text-[10px] text-white md:text-xs ","bg-gradient-to-b from-neutral-800 to-neutral-900 border border-neutral-700/60 text-neutral-100",
           "shadow-[0_1px_1.5px_rgba(0,0,0,0.4),0_8px_24px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.1)]/70",
-          "hover:border-neutral-600 hover:from-neutral-800 hover:to-neutral-850 active:scale-[0.98] transition-colors")}>
+          "hover:border-neutral-600 hover:from-neutral-800 hover:to-neutral-850 active:scale-[0.98] transition-colors ")}>
                 {card.ctaText}
               </div>
           </motion.button>

@@ -27,8 +27,12 @@ export const Faq = () => {
     "I love greenery and nature, which is why I tend a small terrace garden as a part-time gardener.",
 },
   ];
+
+
+  const [openIndex, setOpenIndex] = useState(null);
+
   return (
-    <section className="py-3 md:py-6 lg:py-12 relative overflow-hidden lg:px-24 px-4 pt-8 dark:border-t rounded-3xl shadow-inner shadow-neutral-200 lg:border-hidden dark:bg-neutral-950/60 bg-neutral-950/60">
+    <section className="py-3 md:py-6 lg:py-12 relative overflow-hidden lg:px-24 px-4 pt-8  rounded-3xl shadow-inner shadow-neutral-200 lg:border-hidden dark:bg-neutral-950/60 bg-neutral-950/60 dark:shadow-neutral-700 ">
         {/* <LucideCircleQuestionMark size={20} className=""/> */}
         <h2 className="my-7 md:my-14 px-0 text-xl font-bold pl-3 pb-3">Frequently Asked Questions</h2>
         
@@ -40,6 +44,10 @@ export const Faq = () => {
               key={index}
               question={question.question}
               answer={question.answer}
+              isOpen={openIndex === index}
+              onToggle = {() => {
+                setOpenIndex(openIndex === index ? null : index)
+              }}
             />
           ))}
         </div>
@@ -47,8 +55,8 @@ export const Faq = () => {
   );
 };
 
-const Question = ({ question, answer }) => {
-  const [open, setOpen] = useState(false);
+const Question = ({ question, answer, isOpen, onToggle }) => {
+  
 
   return (
     <div className={cn("w-full rounded-2xl overflow-hidden p-3 md:p-6 px-5 bg-neutral-200", 
@@ -57,7 +65,7 @@ const Question = ({ question, answer }) => {
           "dark:hover:border-neutral-600 dark:hover:from-neutral-800 dark:hover:to-neutral-850 transition-colors"
     )}>
       <button
-        onClick={() => setOpen(!open)}
+        onClick={onToggle}
         className="flex items-center justify-between w-full text-left outline-none cursor-pointer"
       >
         <p className="text-sm md:text-lg font-semibold  font-display text-neutral-900 dark:text-neutral-100">
@@ -67,13 +75,13 @@ const Question = ({ question, answer }) => {
           <Plus
             className={cn(
               "size-4 text-white dark:text-black absolute inset-0 m-auto transition-all duration-200",
-              open && "scale-0 rotate-90"
+              isOpen && "scale-0 rotate-90"
             )}
           />
           <Minus
             className={cn(
               "size-4 text-white dark:text-black absolute inset-0 m-auto scale-0 -rotate-90 transition-all duration-200",
-              open && "scale-100 rotate-0"
+              isOpen && "scale-100 rotate-0"
             )}
           />
         </div>
@@ -81,7 +89,7 @@ const Question = ({ question, answer }) => {
 
       <motion.div
         initial={false}
-        animate={{ height: open ? "auto" : 0, opacity: open ? 1 : 0 , }}
+        animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 , }}
         transition={{ duration: 0.2 , ease: easeInOut}}
 
         className="overflow-hidden"

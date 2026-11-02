@@ -3,30 +3,39 @@ import React from "react";
 
 export const SvgAnimation = () => {
   return (
-    <div className="bada pt-18 bg-neutral-950/60 items-center justify-center flex rounded-3xl shadow-inner shadow-neutral-200 py-8 pb-20 dark:bg-neutral-500/60">
+    <div className="bada flex items-center justify-center rounded-3xl bg-neutral-950/60 md:py-8 lg:py-8 px-3 pt-18 pb-20 shadow-inner shadow-neutral-200 dark:bg-neutral-500/60">
       <motion.div
         whileHover="animate"
-        className="relative flex items-center justify-between w-full max-w-sm mx-auto group px-15 py-10 rounded-xl gap-78 border border-neutral-800 shadow-2xs bg-black min-w-lg shadow-inner shadow-neutral-200/70"
+        className="group relative mx-auto flex w-full max-w-sm lg:min-w-lg md:min-w-lg items-center justify-between gap-78 rounded-xl border border-neutral-800 bg-black md:px-15 lg:px-15 mx-4 py-10 shadow-2xs shadow-inner shadow-neutral-200/70 dark:shadow-neutral-700"
       >
         {/* Left: Labels */}
-        <div className="flex flex-col justify-between h-28 text-xs font-medium text-neutral-400 select-none z-10 shrink-0">
-          <span className="h-5 flex items-center">Summarizer Pro</span>
-          <span className="h-5 flex items-center">Div Centerer</span>
-          <span className="h-5 flex items-center">Junior Intern</span>
+        <div className="z-10 flex h-28 shrink-0 flex-col justify-between text-xs font-medium text-neutral-400 select-none pl-3 lg:pl-0 md:pl-0">
+          <span className="flex h-5 items-center">
+            <span className="sm:hidden">S. P</span>
+            <span className="hidden sm:inline">Summarizer Pro</span>
+          </span>
+          <span className="flex h-5 items-center">
+            <span className="sm:hidden">D. C</span>
+            <span className="hidden sm:inline">Div Centerer</span>
+          </span>
+          <span className="flex h-5 items-center">
+            <span className="sm:hidden">J. I</span>
+            <span className="hidden sm:inline">Junior Intern</span>
+          </span>
         </div>
         {/* Center: Circuit Tracks */}
-        <div className="absolute inset-0 pointer-events-none flex items-center justify-center pl-15">
-          <div className="relative w-[280px] h-28">
-            <TopSVG className="absolute top-2.5 left-4 w-full" />
-            <MiddleSVG className="absolute top-1/2 -translate-y-1/2  w-full" />
-            <BottomSVG className="absolute bottom-2  w-full" />
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center pl-4 md:pl-15 lg:pl-15">
+          <div className="relative h-28 w-[280px]">
+            <TopSVG className="absolute top-2.5 left-4 w-full pr-3 md:pr-0 lg:pr-0" />
+            <MiddleSVG className="absolute top-1/2 w-full -translate-y-1/2 pl-3 md:pl-0 lg:pl-0" />
+            <BottomSVG className="absolute bottom-2 w-full pl-3 md:pl-0 lg:pl-0" />
           </div>
         </div>
-        <div className="relative size-12 rounded-xl bg-neutral-800 p-px overflow-hidden shrink-0 flex items-center justify-center z-10 shadow-lg right-13">
-          <div className="absolute inset-0 h-full w-full [background-image:conic-gradient(at_center,transparent,rgba(59,130,246,0.9)_20%,transparent_30%)] animate-spin scale-[1.6] [animation-duration:3s]" />
-          <div className="absolute inset-0 h-full w-full [background-image:conic-gradient(at_center,transparent,rgba(239,68,68,0.9)_20%,transparent_30%)] animate-spin scale-[1.6] [animation-delay:1.5s] [animation-duration:3s]" />
+        <div className="relative right-13 z-10 flex size-12 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-neutral-800 p-px shadow-lg">
+          <div className="absolute inset-0 h-full w-full scale-[1.6] animate-spin [background-image:conic-gradient(at_center,transparent,rgba(59,130,246,0.9)_20%,transparent_30%)] [animation-duration:3s]" />
+          <div className="absolute inset-0 h-full w-full scale-[1.6] animate-spin [background-image:conic-gradient(at_center,transparent,rgba(239,68,68,0.9)_20%,transparent_30%)] [animation-delay:1.5s] [animation-duration:3s]" />
 
-          <div className="relative z-20 size-full bg-neutral-950 rounded-[11px] flex items-center justify-center">
+          <div className="relative z-20 flex size-full items-center justify-center rounded-[11px] bg-neutral-950">
             <SVG />
           </div>
         </div>
@@ -45,31 +54,10 @@ const TopSVG = ({ className = "" }) => {
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      <line
-        x1="0.5"
-        y1="1"
-        x2="311.5"
-        y2="1"
-        stroke="var(--color-neutral-300)"
-        strokeLinecap="round"
-      />
-      <line
-        x1="311.5"
-        y1="1"
-        x2="311.5"
-        y2="32"
-        stroke="var(--color-neutral-300)"
-        strokeLinecap="round"
-      />
+      <line x1="0.5" y1="1" x2="311.5" y2="1" stroke="var(--color-neutral-300)" strokeLinecap="round" />
+      <line x1="311.5" y1="1" x2="311.5" y2="32" stroke="var(--color-neutral-300)" strokeLinecap="round" />
 
-      <line
-        x1="0.5"
-        y1="1"
-        x2="311.5"
-        y2="1"
-        stroke="url(#line-one-gradient)"
-        strokeLinecap="round"
-      />
+      <line x1="0.5" y1="1" x2="311.5" y2="1" stroke="url(#line-one-gradient)" strokeLinecap="round" />
       <defs>
         <motion.linearGradient
           gradientUnits="userSpaceOnUse"
@@ -109,22 +97,8 @@ export const MiddleSVG = ({ className = "" }) => {
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      <line
-        x1="0.5"
-        y1="1"
-        x2="322.5"
-        y2="1"
-        stroke="var(--color-neutral-300)"
-        strokeLinecap="round"
-      />
-      <line
-        x1="0.5"
-        y1="1"
-        x2="322.5"
-        y2="1"
-        stroke="url(#line-two-gradient)"
-        strokeLinecap="round"
-      />
+      <line x1="0.5" y1="1" x2="322.5" y2="1" stroke="var(--color-neutral-300)" strokeLinecap="round" />
+      <line x1="0.5" y1="1" x2="322.5" y2="1" stroke="url(#line-two-gradient)" strokeLinecap="round" />
       <motion.linearGradient
         gradientUnits="userSpaceOnUse"
         id="line-two-gradient"
@@ -164,14 +138,7 @@ export const BottomSVG = ({ className = "" }) => {
     >
       <line y1="31" x2="325" y2="31" stroke="var(--color-neutral-300)" />
 
-      <line
-        x1="325.5"
-        y1="31"
-        x2="325.5"
-        y2="1"
-        stroke="var(--color-neutral-300)"
-        strokeLinecap="round"
-      />
+      <line x1="325.5" y1="31" x2="325.5" y2="1" stroke="var(--color-neutral-300)" strokeLinecap="round" />
       <line y1="31" x2="325" y2="31" stroke="url(#line-three-gradient)" />
 
       <motion.linearGradient
@@ -209,7 +176,7 @@ export const SVG = () => {
       height="24"
       viewBox="0 0 24 24"
       fill="currentColor"
-      className="text-neutral-500 size-4"
+      className="size-4 text-neutral-500"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
 
