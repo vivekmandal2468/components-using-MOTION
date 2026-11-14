@@ -5,7 +5,7 @@ import { ThemeProvider } from 'next-themes'
 import './index.css'
 import Dashboard from './Dashboard.jsx'
 import { SpeedInsights } from "@vercel/speed-insights/react"
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react"
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
