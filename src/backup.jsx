@@ -58,9 +58,9 @@ const Dashboard = () => {
                   "shadow-[0_1px_1.5px_rgba(0,0,0,0.4),0_8px_24px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.1)]/50",
                   "hover:to-neutral-850 transition-colors hover:border-neutral-600 hover:from-neutral-800 active:scale-[0.98]",
               )}>
-                {/* <img src="/deadpoolPic.jpg" alt="img" className="relative rounded-full " /> */}
+                {/* <img src="/deadpoolPic.webp" alt="img" className="relative rounded-full " /> */}
                 <img
-                  src="/myPic.jpg"
+                  src="/myPic.webp"
                   alt="img"
                   className="h-10 w-10 cursor-pointer rounded-full  shadow-2xl"
                 />

@@ -51,8 +51,8 @@ const Header = ({ isSidebarOpen, setIsSidebarOpen }) => {
               "hover:to-neutral-850 transition-colors hover:border-neutral-600 hover:from-neutral-800 active:scale-[0.98]",
             )}
           >
-            {/* <img src="/deadpoolPic.jpg" alt="img" className="relative rounded-full " /> */}
-            <img src="/myPic.jpg" alt="img" fetchPriority="high" className="h-10 w-10 cursor-pointer rounded-full shadow-2xl" />
+            {/* <img src="/deadpoolPic.webp" alt="img" className="relative rounded-full " /> */}
+            <img src="/myPic.webp" alt="img" fetchPriority="high" className="h-10 w-10 cursor-pointer rounded-full shadow-2xl" />
           </button>
           {/* <div className="w-10 h-10 rounded-full bg-gray-300"></div> */}
         </div>
