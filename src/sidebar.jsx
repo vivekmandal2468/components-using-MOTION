@@ -60,7 +60,7 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
     },
     {
       name: "SequenceAnimate",
-      href: "sequenceAnimate",
+      href: "/sequenceAnimate",
       icon: <Workflow size={18} />,
     },
     {

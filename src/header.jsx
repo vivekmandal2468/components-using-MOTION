@@ -72,7 +72,7 @@ const Header = ({ isSidebarOpen, setIsSidebarOpen }) => {
               href = 'https://x.com/PrimeDev_2468'
               target="_blank"
               rel="noopener noreferrer">
-            <img src="/xProfile.png" alt="Profile" fetchPriority="high" className="max-h-[80vh] max-w-[90vw] rounded-3xl object-contain mb-32 lg:mb-0" /></a>
+            <img src="/xProfile.webp" alt="Profile" fetchPriority="high" className="max-h-[80vh] max-w-[90vw] rounded-3xl object-contain mb-32 lg:mb-0" /></a>
           </div>
         </motion.div>
       )}

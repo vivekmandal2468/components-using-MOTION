@@ -1,6 +1,6 @@
 import { lazy, Suspense, useRef, useState, useEffect } from "react";
 import Sidebar from "./sidebar";
-import { Routes, Route } from "react-router";
+import { Routes, Route } from "react-router-dom";
 const Home = lazy(() => import("./home"));
 const ButtonGlide = lazy(() => import("./buttonGlide"));
 const GlowButton = lazy(() => import("./glow-btn"));

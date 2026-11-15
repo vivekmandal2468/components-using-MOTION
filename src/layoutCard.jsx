@@ -133,7 +133,7 @@ const cards = [
   {
     title: "Doraemon",
     description: "22nd-century cat-type robotic guardian",
-    src: "doremon.png",
+    src: "doremon.webp",
     
     ctaText: "View Profile",
     ctaLink: "https://en.wikipedia.org/wiki/Doraemon_(character)",
@@ -148,7 +148,7 @@ const cards = [
   {
     title: "Nobita Nobi",
     description: "Kind-hearted fourth grader & sharpshooter",
-    src: "nobita.png",
+    src: "nobita.webp",
     ctaText: "View Profile",
     ctaLink: "https://en.wikipedia.org/wiki/Nobita_Nobi",
     content: () => {
@@ -162,7 +162,7 @@ const cards = [
   {
     title: "Shizuka Minamoto",
     description: "Smart, gentle neighborhood peer & violinist",
-    src: "shizuka.png",
+    src: "shizuka.webp",
     ctaText: "View Profile",
     ctaLink: "https://en.wikipedia.org/wiki/Doraemon#Characters",
     content: () => {
@@ -176,7 +176,7 @@ const cards = [
   {
     title: "Takeshi 'Gian' Goda",
     description: "The loud, muscle-bound powerhouse",
-    src: "gian.png",
+    src: "gian.webp",
     ctaText: "View Profile",
     ctaLink: "https://en.wikipedia.org/wiki/Doraemon#Characters",
     content: () => {
@@ -190,7 +190,7 @@ const cards = [
   {
     title: "Suneo Honekawa",
     description: "Wealthy braggart with technical cunning",
-    src: "suneo.png",
+    src: "suneo.webp",
     ctaText: "View Profile",
     ctaLink: "https://en.wikipedia.org/wiki/Doraemon#Characters",
     content: () => {

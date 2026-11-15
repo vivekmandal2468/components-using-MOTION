@@ -72,7 +72,7 @@ const features = [
     title: "Doraemon",
     description:
       "Equipped with a 4D dimensional pocket packed with 22nd-century gadgets to bail out friends from everyday trouble.",
-    content: <img src="doremon.png" alt="Doraemon" className="h-[300px] w-[300px] rounded-lg object-cover" />,
+    content: <img src="doremon.webp" alt="Doraemon" className="h-[300px] w-[300px] rounded-lg object-cover" />,
   },
   {
     icons: <CrosshairIcon className="size-5 text-amber-500" />,
@@ -81,7 +81,7 @@ const features = [
       "An underdog with poor luck and lazy habits, but possesses world-class sharpshooting skills and string-figure mastery.",
     content: (
       <div>
-        <img src="nobita.png" alt="Nobita" className="h-[300px] w-[300px] rounded-lg object-cover" />
+        <img src="nobita.webp" alt="Nobita" className="h-[300px] w-[300px] rounded-lg object-cover" />
       </div>
     ),
   },
@@ -92,7 +92,7 @@ const features = [
       "Kind, conscientious, and hardworking neighborhood friend who loves practicing violin and enjoying sweet potatoes in secret.",
     content: (
       <div>
-        <img src="shizuka.png" alt="Shizuka" className="h-[300px] w-[300px] rounded-lg object-cover" />
+        <img src="shizuka.webp" alt="Shizuka" className="h-[300px] w-[300px] rounded-lg object-cover" />
       </div>
     ),
   },
@@ -103,7 +103,7 @@ const features = [
       "The neighborhood powerhouse known for his dreaded open-air concerts, physical strength, and fierce loyalty in dire crises.",
     content: (
       <div>
-        <img src="gian.png" alt="Gian" className="h-[300px] w-[300px] rounded-lg object-cover" />
+        <img src="gian.webp" alt="Gian" className="h-[300px] w-[300px] rounded-lg object-cover" />
       </div>
     ),
   },
@@ -114,7 +114,7 @@ const features = [
       "Clever and trendsetting gadget collector who loves showing off imported toys, remote-control cars, and vacation retreats.",
     content: (
       <div>
-        <img src="suneo.png" alt="Suneo" className="h-[300px] w-[300px] rounded-lg object-cover" />
+        <img src="suneo.webp" alt="Suneo" className="h-[300px] w-[300px] rounded-lg object-cover" />
       </div>
     ),
   },

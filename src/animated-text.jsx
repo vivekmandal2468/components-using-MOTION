@@ -2,7 +2,7 @@ import { stagger, useAnimate } from "motion/react";
 import React from "react";
 import { cn } from "./lib/utils";
 import { LucideRepeat2 } from "lucide-react";
-import { NavLink } from "react-router";
+import { NavLink } from "react-router-dom";
 
 const AnimatedText = () => {
   const [scope, animate] = useAnimate();
