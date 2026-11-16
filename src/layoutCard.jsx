@@ -49,9 +49,9 @@ const LayoutCard = () => {
 
 
   return (
-    <div className={cn("relative h-full items-center justify-center rounded-3xl bg-neutral-950/60 px-3 py-4 shadow-inner shadow-neutral-200 sm:px-4 lg:p-5 dark:shadow-neutral-700",
+    <div className={cn("relative h-full items-center justify-center rounded-3xl sm:px-4 lg:p-5 dark:shadow-neutral-700",
              "")}> 
-        <div className="p-2 pb-4 text-center font-bold font  text-3xl lg:text-4xl text-black text-shadow-2xs text-shadow-neutral-700 tracking-tight">Doraemon & Friends</div>
+        <div className="p-2 pb-9 text-center font-bold font  text-3xl lg:text-4xl text-black text-shadow-xs text-shadow-neutral-700 tracking-tight">Doraemon & Friends</div>
 
       {current && <motion.div 
         initial={{opacity: 0,}}
@@ -95,34 +95,34 @@ const LayoutCard = () => {
 
 
 
-      <div className="mx-auto flex w-full max-w-md flex-col gap-[15px] lg:gap-4 ">
+      <div className="mx-auto flex w-full max-w-md flex-col gap-5 lg:gap-4 ">
         {cards.map((card, idx) => (
           <motion.button
             layoutId = {`card-${card.title}`}
             onClick={()=> setCurrent(card)}
             key={card.title}
-            className={cn("relative flex min-h-16 h-auto w-full cursor-pointer items-stretch justify-between gap-3 rounded-lg border border-neutral-200 bg-white p-3 sm:items-center sm:p-4",
+            className={cn("relative flex min-h-16 h-auto w-full cursor-pointer items-stretch justify-between gap-3 rounded-lg border border-neutral-200 bg-white p-3 sm:items-center sm:p-4 shadow",
                idx === 0 && "rounded-t-[16px]",
                idx === cards.length - 1 && "rounded-b-[16px]",)}
           >
             <div className="flex min-w-0 self-stretch items-start gap-3 sm:items-center sm:gap-4 sm:self-auto">
-              <div className="border border-neutral-400 self-stretch p-[0.2px] items-center rounded-lg ">
+              <div className="border border-neutral-400 self-stretch p-0.5 items-center rounded-lg ">
                 <motion.img
               layoutId={`card-image-${card.title}`}
                 src={card.src}
                 alt='img'
                 decoding="async"
-                className="h-full w-15 self-stretch rounded-lg bg-neutral-300 object-cover sm:aspect-square sm:h-15 sm:w-auto sm:self-center border border-neutral-100  "
+                className="h-full w-25 self-stretch rounded-lg bg-neutral-300 object-cover sm:aspect-square sm:h-15 sm:w-auto sm:self-center border border-neutral-100  "
               />
               </div>
-              <div className="flex flex-col gap-1 items-start min-w-0">
-                <motion.h2 layoutId={`h2-${card.title}`} className="text-left font-bold text-lg text-black tracking-tight">{card.title}</motion.h2>
-                <motion.p layoutId={`p-${card.description}`} className="text-left text-xs  text-[10px] text-neutral-500">{card.description}</motion.p>
+              <div className="flex flex-col gap-2 items-start min-w-0">
+                <motion.h2 layoutId={`h2-${card.title}`} className="text-left font-bold text-[18px] text-neutral-700 tracking-tight">{card.title}</motion.h2>
+                <motion.p layoutId={`p-${card.description}`} className="text-left text-xs  text-[12px] text-neutral-500">{card.description}</motion.p>
               </div>
             </div>
               <div className={cn("shrink-0 self-center rounded-full px-3 py-1 text-[10px]  md:text-xs ",
           // "shadow-[0_1px_1.5px_rgba(0,0,0,0.4),0_8px_24px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.1)]/10",
-          "shadow-md",
+          "shadow-sm font-semibold",
           "hover:border-neutral-600 hover:from-neutral-800 hover:to-neutral-850 active:scale-[0.98] transition-colors ")}
           style={{ backgroundColor: card.ctacolor.bg, color: card.ctacolor.text }}>
                 {card.ctaText}
