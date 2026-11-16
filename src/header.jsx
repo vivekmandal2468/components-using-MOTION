@@ -52,7 +52,7 @@ const Header = ({ isSidebarOpen, setIsSidebarOpen }) => {
             )}
           >
             {/* <img src="/deadpoolPic.webp" alt="img" className="relative rounded-full " /> */}
-            <img src="/myPic.webp" alt="img" fetchPriority="high" className="h-10 w-10 cursor-pointer rounded-full shadow-2xl" />
+            <img src="/myPic.webp" alt="img" fetchPriority="high" decoding="async" className="h-10 w-10 cursor-pointer rounded-full shadow-2xl" />
           </button>
           {/* <div className="w-10 h-10 rounded-full bg-gray-300"></div> */}
         </div>
@@ -65,14 +65,14 @@ const Header = ({ isSidebarOpen, setIsSidebarOpen }) => {
           animate={{ opacity: 1 }}
           transition={{ ease: "backInOut" }}
           onClick={() => setIsOpen(false)}
-          className="fixed inset-0 z-90 flex cursor-pointer items-center justify-center bg-black/50 p-4 backdrop-blur-sm"
+          className="fixed inset-0 z-90 flex cursor-pointer items-center justify-center bg-black/40 p-4 backdrop-blur-sm"
         >
           <div onClick={(e) => e.stopPropagation()} className="w-96">
             <a 
               href = 'https://x.com/PrimeDev_2468'
               target="_blank"
               rel="noopener noreferrer">
-            <img src="/xProfile.webp" alt="Profile" fetchPriority="high" className="max-h-[80vh] max-w-[90vw] rounded-3xl object-contain mb-32 lg:mb-0" /></a>
+            <img src="/xProfile.webp" alt="Profile" fetchPriority="high" decoding="async" className="max-h-[80vh] max-w-[90vw] rounded-3xl object-contain  lg:mb-0" /></a>
           </div>
         </motion.div>
       )}

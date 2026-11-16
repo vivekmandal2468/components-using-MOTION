@@ -62,6 +62,7 @@ const Dashboard = () => {
                 <img
                   src="/myPic.webp"
                   alt="img"
+                  decoding="async"
                   className="h-10 w-10 cursor-pointer rounded-full  shadow-2xl"
                 />
               </button>
